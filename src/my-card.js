@@ -108,7 +108,7 @@ export class MyCard extends LitElement {
           <td>${this.weight}<br> (pure muscle)</td>
         </tr>  
       </table>
-      <button class="details" ><a href="${this.details}">Details</a></button>
+      <button class="details" ><a href="${this.details}" target="_blank">Details</a></button>
     </div>
   </div>
   </div>`;
