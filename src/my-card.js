@@ -23,7 +23,10 @@ export class MyCard extends LitElement {
       :host {
         display: block;
       }
-      .container{
+      :host {
+        display : inline-block;
+      }
+      .card-container{
         display: flex;
       }
       :host([fancy]) .card{
@@ -56,6 +59,10 @@ export class MyCard extends LitElement {
         align-items: center;
         padding: 10px;
         border: 5px solid #333333;
+        overflow : hidden;
+      }
+      .name{
+        font-family : 'Courier New', Courier, monospace;
       }
       .content{
         margin-left: 5px;
