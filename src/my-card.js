@@ -21,13 +21,7 @@ export class MyCard extends LitElement {
   static get styles() {
     return css`
       :host {
-        display: block;
-      }
-      :host {
         display : inline-block;
-      }
-      .card-container{
-        display: flex;
       }
       :host([fancy]) .card{
         background-image: url("https://t3.ftcdn.net/jpg/03/11/16/14/360_F_311161460_0Uw0qieFHNarQfTU5OR9MKdYAETt13Rs.jpg");
