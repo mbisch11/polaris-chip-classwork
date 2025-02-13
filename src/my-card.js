@@ -111,6 +111,15 @@ export class MyCard extends LitElement {
     `;
   }
 
+  openChanged(e){
+    console.log(e);
+    if(e.target.getAttribute('open') !== null){
+      this.fancy = true;
+    } else {
+      this.fancy = false;
+    }
+  }
+
   render() {
     return html`<div class="container">
   <div class="card">
@@ -127,8 +136,13 @@ export class MyCard extends LitElement {
           <td>${this.weight}<br> (pure muscle)</td>
         </tr>  
       </table>
-      <slot name="description">Bryan</slot>  
-      <button class="details" ><a href="${this.details}" target="_blank">Details</a></button>
+      <details ?open="${this.fancy}" @toggle="${this.openChanged}">
+        <summary>Description</summary>
+        <div>
+          <slot name="description">Bryan</slot>  
+          <button class="details" ><a href="${this.details}" target="_blank">Details</a></button>
+        </div>
+        </details>    
     </div>
   </div>
   </div>`;
@@ -136,7 +150,7 @@ export class MyCard extends LitElement {
 
   static get properties() {
     return {
-      fancy : {type : Boolean},
+      fancy : {type : Boolean, reflect : true},
       name : {type : String},
       img : {type : String},
       height : {type : String},
