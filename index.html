@@ -32,7 +32,48 @@
   <polaris-chip title="Grants and donations"></polaris-chip>
 
   <h1>my-card</h1>
-  <my-card></my-card>
+
+  <my-card 
+  name="Normal Bryan" 
+  height="6'4"
+  weight="220 lbs">
+    <p slot="description">Normal Bryan :)</p>
+  </my-card>
+
+  <my-card 
+  name="The Biggest Bryan" 
+  height="7'11" 
+  weight="325 lbs"
+  img="https://drupal.psu.edu/sites/default/files/styles/square-profile-portrait/public/headshot_0.jpg?itok=XWuUSEEP"
+  description="A really big Bryan">
+    <p slot="description">A <em>really</em> big Bryan</p>
+  </my-card>
+
+  <my-card
+  name="The smallest Bryan"
+  img="https://www.drupalcampatlanta.com/sites/default/files/styles/large/public/profile-images/headshot_0.jpg?itok=Q7dtTpSk"
+  height="2'2"
+  weight="35 lbs">
+    <p slot="description">The <em>smallest</em> Bryan I've ever seen</p>
+  </my-card>
+
+  <my-card
+  name="Scary Bryan"
+  img="https://i.ytimg.com/vi/lcakpMnPNMM/hq2.jpg?sqp=-oaymwEYCNYCEOgCSFryq4qpAwoIARUAAIhC0AEB&rs=AOn4CLDRFWhyOMykg3HVSM7qkWUKemBo7Q"
+  height="Tall"
+  weight="Scary"
+  scary>
+    <p slot="description" color="white">I don't like this Bryan he <b>scares</b> me</p>
+  </my-card>
+
+  <my-card
+  name="Nice Bryan"
+  img="https://www.elmsln.org/sites/redesign/files/styles/square-profile-portrait/public/PXL_20220729_131000960.jpg?itok=odtQ6_Ao"
+  height="Comfortable"
+  weight="Comforting"
+  fancy>
+    <p slot="description">What a <b>kind, understanding</b> Bryan</p>
+  </my-card>
 
   <!-- this is what is bringing in the definition for this tag -->
   <script type="module" src="./src/polaris-chip.js"></script>

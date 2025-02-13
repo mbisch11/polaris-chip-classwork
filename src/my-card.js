@@ -1,10 +1,5 @@
 import { LitElement, html, css } from 'lit';
 
-/**
- * Now it's your turn. Here's what we need to try and do:
- * 1. Get you HTML from your card working in here 
- * 2. Get your CSS rescoped as needed to work here
- */
 
 export class MyCard extends LitElement {
 
@@ -18,7 +13,9 @@ export class MyCard extends LitElement {
     this.img = "https://assets.powerplaystats.com/medias/4838.jpg";
     this.height = "6'10";
     this.weight = "205 lbs";
-    this.details = "https://hax.psu.edu/"
+    this.details = "https://hax.psu.edu/";
+    this.fancy = false;
+    this.scary = false;
   }
 
   static get styles() {
@@ -28,6 +25,28 @@ export class MyCard extends LitElement {
       }
       .container{
         display: flex;
+      }
+      :host([fancy]) .card{
+        background-image: url("https://t3.ftcdn.net/jpg/03/11/16/14/360_F_311161460_0Uw0qieFHNarQfTU5OR9MKdYAETt13Rs.jpg");
+      }
+      :host([fancy]) .name{
+        color: wheat;
+        text-shadow: 2px 2px 4px;
+      }
+      :host([fancy]) ::slotted(p){
+        color: wheat;
+        text-shadow: 1px 1px 2px;
+      }
+      :host([scary]) .card{
+        background-image: url("https://media.istockphoto.com/id/849048646/photo/zombies-hand-silhouette.jpg?s=612x612&w=0&k=20&c=eCh_1bI-uvQh0Af2lXXH_xPToAJydbdyMwMOvndkD1U=")
+      }
+      :host([scary]) .name{
+        color: maroon;
+        text-shadow: 2px 2px black;
+      }
+      :host([scary]) ::slotted(p){
+        color: maroon;
+        text-shadow: 1px 1px black;
       }
       .card{
         background-image: url("https://t4.ftcdn.net/jpg/11/41/18/39/360_F_1141183983_gfTMXnyOToTayLmNmvXgfvD6sok94hRL.jpg");
@@ -108,6 +127,7 @@ export class MyCard extends LitElement {
           <td>${this.weight}<br> (pure muscle)</td>
         </tr>  
       </table>
+      <slot name="description">Bryan</slot>  
       <button class="details" ><a href="${this.details}" target="_blank">Details</a></button>
     </div>
   </div>
@@ -116,7 +136,12 @@ export class MyCard extends LitElement {
 
   static get properties() {
     return {
-      title: { type: String },
+      fancy : {type : Boolean},
+      name : {type : String},
+      img : {type : String},
+      height : {type : String},
+      weight : {type : String},
+      details : {type : String}
     };
   }
 }
