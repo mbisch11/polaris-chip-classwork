@@ -25,6 +25,7 @@ export class MyCard extends LitElement {
       }
       :host([fancy]) .card{
         background-image: url("https://t3.ftcdn.net/jpg/03/11/16/14/360_F_311161460_0Uw0qieFHNarQfTU5OR9MKdYAETt13Rs.jpg");
+        width: 400px;
       }
       :host([fancy]) .name{
         color: wheat;
