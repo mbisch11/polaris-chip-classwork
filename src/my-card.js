@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit';
-
+import "@haxtheweb/meme-maker";
 
 export class MyCard extends LitElement {
 
@@ -14,6 +14,8 @@ export class MyCard extends LitElement {
     this.height = "6'10";
     this.weight = "205 lbs";
     this.details = "https://hax.psu.edu/";
+    this.top_text = "TOP TEXT";
+    this.bottom_text = "BOTTOM TEXT";
     this.fancy = false;
     this.scary = false;
   }
@@ -125,7 +127,7 @@ export class MyCard extends LitElement {
   render() {
     return html`<div class="container">
   <div class="card">
-    <img class="bryan" src="${this.img}"/>
+    <meme-maker class="bryan" image-url="${this.img}" top-text="${this.top_text}" bottom-text="${this.bottom_text}"></meme-maker>
     <div class="content">
       <h2 class="name">${this.name}</h2>
       <table class="stats">
@@ -157,7 +159,9 @@ export class MyCard extends LitElement {
       img : {type : String},
       height : {type : String},
       weight : {type : String},
-      details : {type : String}
+      details : {type : String},
+      top_text : {type : String},
+      bottom_text : {type : String}
     };
   }
 }
